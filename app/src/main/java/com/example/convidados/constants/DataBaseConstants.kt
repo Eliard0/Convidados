@@ -7,7 +7,7 @@ class DataBaseConstants private constructor(){
         object COLUMNS {
             const val ID = "id"
             const val NAME = "name"
-            const val presence = "presence"
+            const val PRESENCE = "presence"
         }
     }
 }
