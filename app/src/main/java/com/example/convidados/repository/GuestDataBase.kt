@@ -10,7 +10,6 @@ class GuestDataBase(context: Context) : SQLiteOpenHelper(context, NAME, null, VE
         private const val NAME = "guestdb"
         private const val VERSION = 1
     }
-
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(
             "create table " + DataBaseConstants.GUEST.TABLE_NAME + "(" +
@@ -19,7 +18,6 @@ class GuestDataBase(context: Context) : SQLiteOpenHelper(context, NAME, null, VE
                     DataBaseConstants.GUEST.COLUMNS.PRESENCE + " integer);"
         )
     }
-
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         TODO("Not yet implemented")
     }
