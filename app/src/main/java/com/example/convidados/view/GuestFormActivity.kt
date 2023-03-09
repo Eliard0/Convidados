@@ -16,7 +16,7 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityGuestFormBinding
     private lateinit var viewModel: GuestFormViewModel
-    private var guestId = 0
+    private var guestId: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +38,11 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
             val name = binding.textEditName.text.toString()
             val presence = binding.radioPresent.isChecked
 
-            val model = GuestModel(guestId, name, presence)
+            val model = GuestModel().apply {
+                this.id = guestId
+                this.name = name
+                this.presence = presence
+            }
 
             viewModel.save(model)
             finish()
